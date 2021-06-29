@@ -1,0 +1,56 @@
+<h1 *ngIf="isEdit">Edit Empire</h1>
+<h1 *ngIf="!isEdit">Add Empire</h1>
+<form class="form-horizontal"
+[formGroup]="empireForm"
+(ngSubmit)="save()" >
+<fieldset>
+    <div class="form-group" [ngClass]="{'has-error': ( empireForm.get('nameFormControl').touched || empireForm.get('nameFormControl').dirty  && !empireForm.get('nameFormControl').valid )}">
+        <label for="name">Name</label>
+        <input 
+        [(ngModel)]="name"
+        id="name"
+        class="form-control"
+        type="text"
+        required
+        formControlName="nameFormControl"
+        >
+        <span class="help-block"
+        *ngIf=" ( empireForm.get('nameFormControl').touched || 
+        empireForm.get('nameFormControl').dirty  && 
+       !empireForm.get('nameFormControl').valid )">
+        <span *ngIf="empireForm.get('nameFormControl').errors?.required">
+        This field is required</span>
+    </span>
+    </div>
+    <div class="form-group">
+        <label for="userId">User</label>
+        <select 
+        [value]="userId"
+        [(ngModel)]="userId"
+        formControlName="userFormControl" 
+        required 
+        class="form-control" 
+        id="userId">
+        <option *ngFor="let user of users"  type="number" [value]="user.id">{{user.firstName + " " + user.lastName}}</option>
+        </select>
+    </div>  
+    <div class="form-group">
+        <label for="race">Race</label>
+        <select 
+        [value]="race"
+        [(ngModel)]="race"
+        formControlName="raceFormControl" 
+        required 
+        class="form-control" 
+        id="race">
+        <option  type="number" [value]="0">Human</option>
+        <option  type="number" [value]="1">Elves</option>
+        <option  type="number" [value]="2">Dark Elves</option>
+        <option  type="number" [value]="3">Dwarves</option>
+        <option  type="number" [value]="4">Orcs</option>
+        <option type="number" [value]="5">Undead</option>
+        </select>
+    </div>
+</fieldset>
+<button class="btn btn-primary" type="submit">Save</button>
+</form>

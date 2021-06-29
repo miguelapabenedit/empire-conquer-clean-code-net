@@ -1,0 +1,25 @@
+<div class="float-md-right">
+    <button  [routerLink]='["/empire-create"]' class="btn btn-success">
+     Create
+    </button>
+</div>
+<table class="table" >
+<tr>
+    <td>Name</td>
+    <td>User</td>
+    <td>Race</td>
+    <td>Numb Of Cities</td>
+    <td>Action</td>
+    
+</tr>
+<tr  *ngFor="let empire of empires" > 
+    <td>{{ empire.name }}</td>
+    <td>{{ empire.user?.firstName + ' ' + empire.user?.lastName}}</td>
+    <td>{{ getRaceType(empire.race) }}</td>
+    <td>{{ empire.cities.length }}</td>
+    <td>
+        <button class="btn btn-danger" (click)="delete(empire.id)"> Delete</button>
+        <button class="btn btn-primary" [routerLink]='["/empire/" +  empire.id  ]'>Edit</button>
+    </td>
+</tr>
+</table>

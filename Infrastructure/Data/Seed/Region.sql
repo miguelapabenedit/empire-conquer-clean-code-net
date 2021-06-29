@@ -1,0 +1,5 @@
+INSERT INTO "Regions" ("Name","MapId","CreatedBy","CreatedDate","UpdatedBy","UpdatedDate")
+VALUES
+('Region Seed 1',1,'SEED USER',(SELECT GETUTCDATE()),'SEED USER',(SELECT GETUTCDATE())),
+('Region Seed 2',1,'SEED USER',(SELECT GETUTCDATE()),'SEED USER',(SELECT GETUTCDATE())),
+('Region Seed 3',1,'SEED USER',(SELECT GETUTCDATE()),'SEED USER',(SELECT GETUTCDATE()))

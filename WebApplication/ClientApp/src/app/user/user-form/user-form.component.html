@@ -1,0 +1,105 @@
+<h1 *ngIf="isEdit">Edit User</h1>
+<h1 *ngIf="!isEdit">Add User</h1>
+<form class="form-horizontal"
+[formGroup]="userForm"
+(ngSubmit)="save()" >
+<fieldset>
+<div class="form-group" [ngClass]="{'has-error': ( userForm.get('firstNameFormControl').touched || userForm.get('firstNameFormControl').dirty  && !userForm.get('firstNameFormControl').valid )}">
+    <label for="firstName">First Name</label>
+    <input 
+    [(ngModel)]="firstName"
+    id="firstName"
+    class="form-control"
+    type="text"
+    required
+    formControlName="firstNameFormControl"
+    >
+    <span class="help-block"
+    *ngIf=" ( userForm.get('firstNameFormControl').touched || 
+    userForm.get('firstNameFormControl').dirty  && 
+   !userForm.get('firstNameFormControl').valid )">
+    <span *ngIf="userForm.get('firstNameFormControl').errors?.required">
+    This field is required</span>
+</span>
+</div>
+<div 
+    class="form-group" 
+    [ngClass]="{'has-error': ( userForm.get('lastNameFormControl').touched 
+    || userForm.get('lastNameFormControl').dirty  
+    && !userForm.get('lastNameFormControl').valid 
+    )}">
+    <label for="lastName">Last Name</label>
+    <input 
+    [(ngModel)]="lastName"
+    id="lastName"
+    class="form-control"
+    type="text"
+    required
+    formControlName="lastNameFormControl"
+    >
+    <span class="help-block"
+         *ngIf=" ( userForm.get('lastNameFormControl').touched || 
+        userForm.get('lastNameFormControl').dirty  && 
+        !userForm.get('lastNameFormControl').valid )">
+        <span *ngIf="userForm.get('lastNameFormControl').errors?.required">
+        This field is required</span>
+    </span>
+</div>
+<div 
+    class="form-group" 
+    [ngClass]="{'has-error': ( userForm.get('emailFormControl').touched 
+    || userForm.get('emailFormControl').dirty  
+    && !userForm.get('emailFormControl').valid 
+    )}">
+    <label for="email">Email</label>
+    <input 
+    [(ngModel)]="email"
+    id="email"
+    class="form-control"
+    type="text"
+    required
+    formControlName="emailFormControl"
+    >
+    <span class="help-block" *ngIf=" ( userForm.get('emailFormControl').touched || userForm.get('emailFormControl').dirty  && !userForm.get('emailFormControl').valid )">
+        <span *ngIf="userForm.get('emailFormControl').errors?.required">
+        This field is required
+    </span>
+</span>
+</div>
+<div 
+    class="form-group" 
+    [ngClass]="{'has-error': ( userForm.get('passwordFormControl').touched 
+    || userForm.get('passwordFormControl').dirty  
+    && !userForm.get('passwordFormControl').valid 
+    )}">
+    <label for="password">Password</label>
+    <input 
+    [(ngModel)]="password"
+    id="password"
+    class="form-control"
+    type="text"
+    required
+    formControlName="passwordFormControl"
+    >
+    <span class="help-block" *ngIf=" ( userForm.get('passwordFormControl').touched || userForm.get('passwordFormControl').dirty  && !userForm.get('passwordFormControl').valid )">
+        <span *ngIf="userForm.get('passwordFormControl').errors?.required">
+        This field is required
+    </span>
+</span>
+</div>
+<div class="form-group">
+    <label for="role">Role</label>
+    <select 
+    [value]="role"
+    [(ngModel)]="role"
+    formControlName="roleFormControl" 
+    required 
+    class="form-control" 
+    id="role">
+    <option type="number" [value]="2">User</option>
+    <option type="number" [value]="1">Admin</option>
+    </select>
+</div>
+</fieldset>
+<button class="btn btn-primary" type="submit">Save</button>
+</form>

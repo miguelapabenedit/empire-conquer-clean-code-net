@@ -1,0 +1,27 @@
+
+<div class="float-md-right">
+    <button  [routerLink]='["/user-create"]' class="btn btn-success">
+     Create
+    </button>
+</div>
+<table class="table" >
+<tr>
+    <th>Id</th>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+    <td>Role</td>
+    <td>Action</td>
+</tr>
+<tr  *ngFor="let user of users" > 
+    <td>{{ user.id }}</td>
+    <td>{{ user.firstName }}</td>
+    <td>{{ user.lastName }}</td>
+    <td>{{ user.email }}</td>
+    <td>{{ getRoleType(user.role) }}</td>
+    <td>
+        <button class="btn btn-danger" (click)="delete(user.id)">Delete</button>
+        <button class="btn btn-primary" [routerLink]='["/user/" +  user.id  ]'>Edit</button>
+    </td>
+</tr>
+</table>

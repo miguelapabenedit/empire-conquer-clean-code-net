@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAppi</name>
+    </assembly>
+    <members>
+        <member name="M:WebApplication.Swagger.SwaggerExtensions.AddVersioning(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add service API versioning to the collection.
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication.Swagger.SwaggerExtensions.AddSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Add Swagger to the collection.
+            </summary>
+            <param name="services">IServiceCollection.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication.Swagger.SwaggerExtensions.UseSwaggerWithVersioning(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Mvc.ApiExplorer.IApiVersionDescriptionProvider)">
+            <summary>
+            Add SwaggerUI to the ASP.NET Core pipeline. This method generate
+            the SwaggerUI for each specified API version.
+            </summary>
+            <param name="app">IApplicationBuilder.</param>
+            <param name="provider">IApiVersionDescriptionProvider.</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApplication.Swagger.SwaggerOptions.Configure(Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenOptions)">
+            <summary>
+            This method is used to generate the 
+            SwaggerDoc Info for the API.
+            </summary>
+            <param name="options">SwaggerGenOptions</param>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.BaseApiController`1">
+            <summary>
+            Base api controller
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:WebApplication.V1.Controllers.BaseApiController`1.Get">
+            <summary>
+            Get an entity list
+            </summary>
+            <returns>List of entities.</returns>
+        </member>
+        <member name="M:WebApplication.V1.Controllers.BaseApiController`1.Get(System.Int64)">
+            <summary>
+            Get an entity by id
+            </summary>
+            <param name="id">Id</param>
+            <returns>Entity</returns>
+        </member>
+        <member name="M:WebApplication.V1.Controllers.BaseApiController`1.Post(`0)">
+            <summary>
+            Creates an entity
+            </summary>
+            <param name="value">Entity</param>
+        </member>
+        <member name="M:WebApplication.V1.Controllers.BaseApiController`1.Put(System.Int64,`0)">
+            <summary>
+            Updates an entity
+            </summary>
+            <param name="id">Id</param>
+            <param name="value">Entity</param>
+        </member>
+        <member name="M:WebApplication.V1.Controllers.BaseApiController`1.Delete(System.Int64)">
+            <summary>
+            Delete an entity
+            </summary>
+            <param name="id">Id</param>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.CityController">
+            <summary>
+            City api controller
+            </summary>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.EmpireController">
+            <summary>
+            Empire api controller
+            </summary>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.GameController">
+            <summary>
+            Game api controller
+            </summary>
+        </member>
+        <member name="M:WebApplication.V1.Controllers.GuildController.GetByRegionId(System.Int64)">
+            <summary>
+            Get an Guild list base on a Region Id
+            </summary>
+            <param name="regionId">regionId</param>
+            <returns>Entity</returns>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.HeroeController">
+            <summary>
+            Heroe api controller
+            </summary>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.LoginController">
+            <summary>
+            Login api controller
+            </summary>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.MapController">
+            <summary>
+            Map api controller
+            </summary>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.QuestController">
+            <summary>
+            Quest api controller
+            </summary>
+        </member>
+        <member name="T:WebApplication.V1.Controllers.UserController">
+            <summary>
+            User api controller
+            </summary>
+        </member>
+    </members>
+</doc>
